@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav>
-          <h1>This is my example Next.Js App!</h1>
+          <h1>This is a list of food items.</h1>
         </nav>
       {children}
       </body>

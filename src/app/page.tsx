@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/card';
 
 import { Badge } from '@/components/ui/badge';
-import { Button} from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Recipe {
@@ -25,7 +25,7 @@ async function getRecipes(): Promise<Recipe[]> {
   /* Delay the response by 3 seconds */
   await new Promise(resolve => setTimeout(resolve, 1000));
   
-  return result.json()
+  return result.json();
 }
 
 export default async function Home() {
@@ -39,7 +39,7 @@ export default async function Home() {
             <CardHeader className={"flex-row gap-4 items-center"}>
               <Avatar>
                 <AvatarImage src={`/img/${recipe.image}`} alt={recipe.title} />
-                <AvatarFallback>{recipe.title.slice(0,2)}</AvatarFallback>
+                <AvatarFallback>{recipe.title.slice(0, 2)}</AvatarFallback>
               </Avatar>
               <div>
                 <CardTitle>{recipe.title}</CardTitle>
@@ -57,5 +57,5 @@ export default async function Home() {
         ))}
       </div>
     </main>
-  )
+  );
 }

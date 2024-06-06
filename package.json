@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"next dev\" \"json-server --watch ../my-app/data/db.json --port 4000\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -75,3 +75,18 @@ h2 {
   @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors
   first:mt-0;
 }
+
+.left-arrow-box {
+  @apply bg-sideselectbackground ml-3 h-16 w-48;
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+}
+
+.memory-box {
+  @apply bg-memory_bar_background h-16 -mx-2 flex-1;
+  clip-path: polygon(0 0, 100% 0, 97.5% 100%, 2.5% 100%);
+}
+
+.right-arrow-box {
+  @apply bg-sideselectbackground mr-3 h-16 w-48;
+  clip-path: polygon(8% 0%, 100% 0, 100% 100%, 0 100%);
+}

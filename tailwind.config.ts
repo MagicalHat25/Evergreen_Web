@@ -27,6 +27,8 @@ const config = {
         topbar: '#00394f',
         sideselectbackground: '#425966',
         memory_bar_background: '#2b4253',
+        trigger_box_background: '#2a2f35',
+        trigger_box_border: '#313d49',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

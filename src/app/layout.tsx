@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Inter } from "next/font/google";
 import "./styles/globals.css";
+import Image from 'next/image';
 
-const inter = Inter({ subsets: ["latin"] });
+import LeftArrowIcon from "../../public/svg/LeftArrow.svg";
+import RightArrowIcon from "../../public/svg/RightArrow.svg";
+
 
 export const metadata: Metadata = {
   title: "Sandbox",
@@ -18,28 +20,43 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"bg-background"}>
-        <nav className={"m-2"}>
-          <div className={"flex justify-between w-full"}>
-            <Button className={"flex-1 mx-1 h-14 bg-topbar text-xl font-light"}>
-              WELD
-            </Button>
-            <Button className={"flex-1 mx-1 h-14 bg-topbar text-xl font-light"}>
-              TRIGGER
-            </Button>
-            <Button className={"flex-1 mx-1 h-14 bg-topbar text-xl font-light"}>
-              SEQUENCE
-            </Button>
-            <Button className={"flex-1 mx-1 h-14 bg-topbar text-xl font-light"}>
-            </Button>
-            <Button className={"flex-1 mx-1 h-14 bg-topbar text-xl font-light"}>
-              MORE -{">"}
-            </Button>
-            </div>
-        </nav>
-        <div className={"flex justify-between w-full"}>
-          <div className={"left-arrow-box"}></div>
-          <div className={"memory-box"}></div>
-          <div className={"right-arrow-box"}></div>
+        <div className={"top-bar"}>
+          <Button className={"top-bar-button"}>
+            WELD
+          </Button>
+          <Button className={"top-bar-button"}>
+            TRIGGER
+          </Button>
+          <Button className={"top-bar-button"}>
+            SEQUENCE
+          </Button>
+          <Button className={"top-bar-button"}>
+          </Button>
+          <Button className={"top-bar-button"}>
+            MORE
+            <Image className={"more-arrow-icon"}
+               priority
+               src={RightArrowIcon}
+               alt={"Right Arrow"}
+            />
+          </Button>
+          </div>
+        <div className={"memory-bar"}>
+          <div className={"left-arrow-box"}>
+            <Image className={"left-arrow-icon"}
+              priority
+              src={LeftArrowIcon}
+              alt={"Left Arrow"}
+              />
+          </div>
+          <div className={"memory-box"}>MEMORY: 1</div>
+          <div className={"right-arrow-box"}>
+            <Image className={"right-arrow-icon"}
+               priority
+               src={RightArrowIcon}
+               alt={"Right Arrow"}
+            />            
+          </div>
         </div>
       {children}
       </body>

@@ -56,13 +56,48 @@ function SequenceIconBox() {
   )
 }
 
+function LeftMeterBox () {
+  return (
+    <div className={"left-meter-box"}>
+      <div className={"title-box"}>
+        <span className="title-box-text">VOLTAGE</span>
+      </div>
+    </div>
+  )
+}
+
+function MiddleBox () {
+  return (
+    <div className={"middle-box"}>
+      <div className={"title-box"}>
+        <span className="title-box-text text-nowrap">WELD PARAMETERS</span>
+      </div>
+    </div>
+  )
+}
+
+function RightMeterBox () {
+  return (
+    <div className={"right-meter-box"}>
+      <div className={"title-box"}>
+        <span className="title-box-text text-nowrap">WIRE SPEED</span>
+      </div>
+    </div>
+  )
+}
+
 export default async function Home() {
   return (
     <main>
-      <IconBar> 
-        <TriggerIconBox />
-        <SequenceIconBox />
+      <IconBar>
+        <TriggerIconBox/>
+        <SequenceIconBox/>
       </IconBar>
+      <div className={"m-2 flex justify-between"}>
+        <LeftMeterBox/>
+        <MiddleBox/>
+        <RightMeterBox/>
+      </div>
     </main>
   );
 }

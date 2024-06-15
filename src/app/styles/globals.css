@@ -191,8 +191,10 @@ h2 {
 }
 
 .icon {
-  @apply mb-10 max-h-10;
+  @apply mb-10;
   width: 20%;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 .icon.inactive {

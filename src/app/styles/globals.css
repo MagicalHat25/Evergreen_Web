@@ -83,7 +83,7 @@ h2 {
 }
 
 .top-bar-button {
-  @apply bg-topbar text-xl font-normal;
+  @apply bg-topbar font-normal;
   aspect-ratio: 151/37;
   height: auto;
   margin-left: 0.35%;
@@ -183,7 +183,8 @@ h2 {
 
 .title-box-text {
   @apply text-base;
-  margin-left: 2%
+  margin-left: 2%;
+  font-size: calc(1.25vw);
 }
 
 .icon-row {

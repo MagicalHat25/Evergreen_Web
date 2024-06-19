@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FourTIcon from "../../../public/svg/4T Icon.svg";
 import React, { ReactNode } from 'react';
+import TopBar from "@/components/TopBar";
 
 interface IconBarProps {
   children: ReactNode;
@@ -90,6 +91,7 @@ export default async function Home() {
   
   return (
     <main>
+      <TopBar buttonLabels={["WELD", "TRIGGER", "SEQUENCE", ""]} />
       <IconBar>
         <TriggerIconBox/>
         <SequenceIconBox/>

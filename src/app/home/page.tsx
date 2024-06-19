@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import FourTIcon from "../../public/svg/4T Icon.svg";
+import FourTIcon from "../../../public/svg/4T Icon.svg";
 import React, { ReactNode } from 'react';
 
 interface IconBarProps {

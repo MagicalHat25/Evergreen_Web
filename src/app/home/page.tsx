@@ -1,101 +1,22 @@
-import Image from 'next/image';
-import FourTIcon from "../../../public/svg/4T Icon.svg";
-import React, { ReactNode } from 'react';
+import React from 'react';
+
 import TopBar from "@/components/TopBar";
-
-interface IconBarProps {
-  children: ReactNode;
-}
-
-function IconBar({ children }: IconBarProps) {
-  return (
-    <div className="icon-bar-box">
-      {children}
-    </div>
-  );
-}
-
-function TriggerIconBox() {
-  return (
-    <div className={"trigger-icon-box"}>
-      <div className={"title-box"}>
-        <span className="title-box-text">TRIGGER</span>
-      </div>
-      <div className="icon-row">
-        <Image className={"icon"}
-           priority
-           src={FourTIcon}
-           alt={"4T Icon"}
-        />
-        <Image className={"icon icon.inactive"}
-           priority
-           src={FourTIcon}
-           alt={"4T Icon"}
-        />
-        <Image className={"icon icon.inactive"}
-           priority
-           src={FourTIcon}
-           alt={"4T Icon"}
-        />
-        <Image className={"icon"}
-           priority
-           src={FourTIcon}
-           alt={"4T Icon"}
-        />
-      </div>
-    </div>
-  )
-}
-
-function SequenceIconBox() {
-  return (
-    <div className={"sequence-icon-box"}>
-      <div className={"title-box"}>
-        <span className="title-box-text">SEQUENCE</span>
-      </div>
-    </div>
-  )
-}
-
-function LeftMeterBox () {
-  return (
-    <div className={"left-meter-box"}>
-      <div className={"title-box"}>
-        <span className="title-box-text">VOLTAGE</span>
-      </div>
-    </div>
-  )
-}
-
-function MiddleBox () {
-  return (
-    <div className={"middle-box"}>
-      <div className={"title-box"}>
-        <span className="title-box-text text-nowrap">WELD PARAMETERS</span>
-      </div>
-    </div>
-  )
-}
-
-function RightMeterBox () {
-  return (
-    <div className={"right-meter-box"}>
-      <div className={"title-box"}>
-        <span className="title-box-text text-nowrap">WIRE SPEED</span>
-      </div>
-    </div>
-  )
-}
+import MemoryBar from "@/components/MemoryBar";
+import TriggerIconBar from "@/components/TriggerIconBar";
+import SequenceIconBar from "@/components/SequenceIconBar";
+import LeftMeterBox from "@/components/home/LeftMeterBox";
+import RightMeterBox from "@/components/home/RightMeterBox";
+import MiddleBox from "@/components/home/MiddleBox";
 
 export default async function Home() {
-  
   return (
     <main>
       <TopBar buttonLabels={["WELD", "TRIGGER", "SEQUENCE", ""]} />
-      <IconBar>
-        <TriggerIconBox/>
-        <SequenceIconBox/>
-      </IconBar>
+      <MemoryBar/>
+      <div className="icon-bar-box">
+        <TriggerIconBar/>
+        <SequenceIconBar/>
+      </div>
       <div className={"m-2 flex justify-between"}>
         <LeftMeterBox/>
         <MiddleBox/>

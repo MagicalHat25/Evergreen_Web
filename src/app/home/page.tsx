@@ -11,7 +11,7 @@ import MiddleBox from "@/components/home/MiddleBox";
 export default async function Home() {
   return (
     <main>
-      <TopBar buttonLabels={["WELD", "TRIGGER", "SEQUENCE", ""]} />
+      <TopBar buttonLabels={["WELD", "TRIGGER", "SEQUENCE", ""]} showMoreButton={true} />
       <MemoryBar/>
       <div className="icon-bar-box">
         <TriggerIconBar/>

@@ -1,5 +1,7 @@
+'use client'
+
 import {Button} from "@/components/ui/button";
-import React, {forwardRef} from "react";
+import React from "react";
 import Image from "next/image";
 import RightArrowIcon from "../../public/svg/RightArrow.svg";
 import LeftArrowIcon from "../../public/svg/LeftArrow.svg";
@@ -15,8 +17,17 @@ const TopBar: React.FC<TopBarProps> = ({ buttonLabels, showMoreButton=false }) =
     <div className={"bg-background"}>
       <div className={"top-bar"}>
         {buttonLabels.map((label, index) => (
-          <Button key={index} className={"top-bar-button"}>
-            <Link  href={`/${label.toLowerCase()}`} passHref>
+          <Button 
+            key={index} 
+            className={"top-bar-button"} 
+            asChild
+            onClick={(e) => {
+              if(!label) {
+                e.preventDefault();
+            }
+          }}
+          >
+            <Link href={`/${label.toLowerCase()}`} passHref>
               {label}
             </Link>
           </Button>

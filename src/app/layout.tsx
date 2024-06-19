@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import React from "react";
-import TopBar from "@/components/TopBar";
 
 export const metadata: Metadata = {
   title: "Sandbox",
@@ -16,8 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"bg-background"}>
-        <TopBar buttonLabels={["WELD", "TRIGGER", "SEQUENCE", ""]} />
-      {children}
+        {children}
       </body>
     </html>
   );

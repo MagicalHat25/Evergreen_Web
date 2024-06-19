@@ -87,6 +87,7 @@ function RightMeterBox () {
 }
 
 export default async function Home() {
+  
   return (
     <main>
       <IconBar>

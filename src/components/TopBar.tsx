@@ -1,36 +1,37 @@
-'use client'
-
-import { useRouter } from 'next/navigation'
 import {Button} from "@/components/ui/button";
-import React from "react";
+import React, {forwardRef} from "react";
 import Image from "next/image";
 import RightArrowIcon from "../../public/svg/RightArrow.svg";
 import LeftArrowIcon from "../../public/svg/LeftArrow.svg";
+import Link from "next/link";
 
-const TopBar = () => {
-  const router = useRouter();
+interface TopBarProps {
+  buttonLabels: string[];
+  showMoreButton?: boolean;
+}
 
+const TopBar: React.FC<TopBarProps> = ({ buttonLabels, showMoreButton=false }) => {
   return (
-    <body className={"bg-background"}>
+    <div className={"bg-background"}>
       <div className={"top-bar"}>
-        <Button className={"top-bar-button"} type="button" onClick={() => router.push('/weld')}>
-          WELD
-        </Button>
+        {buttonLabels.map((label, index) => (
+          <Button key={index} className={"top-bar-button"}>
+            <Link  href={`/${label.toLowerCase()}`} passHref>
+              {label}
+            </Link>
+          </Button>
+        ))}
         <Button className={"top-bar-button"}>
-          TRIGGER
-        </Button>
-        <Button className={"top-bar-button"} type="button" onClick={() => router.push('/sequence')}>
-          SEQUENCE
-        </Button>
-        <Button className={"top-bar-button"}>
-        </Button>
-        <Button className={"top-bar-button"}>
-          MORE
-          <Image className={"more-arrow-icon"}
-                 priority
-                 src={RightArrowIcon}
-                 alt={"Right Arrow"}
-          />
+          {showMoreButton && (
+            <>
+              MORE
+              <Image className={"more-arrow-icon"}
+                     priority
+                     src={RightArrowIcon}
+                     alt={"Right Arrow"}
+              />
+            </>
+          )}
         </Button>
       </div>
       <div className={"memory-bar"}>
@@ -50,7 +51,7 @@ const TopBar = () => {
           />
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

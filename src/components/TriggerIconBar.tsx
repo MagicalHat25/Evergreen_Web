@@ -9,22 +9,22 @@ function TriggerIconBar() {
         <span className="title-box-text">TRIGGER</span>
       </div>
       <div className="icon-row">
-        <Image className={"icon icon-active"}
+        <Image className={"icon-active"}
                priority
                src={FourTIcon}
                alt={"4T Icon"}
         />
-        <Image className={"icon icon-inactive"}
+        <Image className={"icon-inactive"}
                priority
                src={FourTIcon}
                alt={"4T Icon"}
         />
-        <Image className={"icon icon.inactive"}
+        <Image className={"icon-inactive"}
                priority
                src={FourTIcon}
                alt={"4T Icon"}
         />
-        <Image className={"icon icon.inactive"}
+        <Image className={"icon-inactive"}
                priority
                src={FourTIcon}
                alt={"4T Icon"}

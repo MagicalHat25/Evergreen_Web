@@ -198,8 +198,12 @@ h2 {
   aspect-ratio: 1/1;
 }
 
-.icon.inactive {
-  color: red;
+.icon-inactive {
+  opacity: 0.25;
+}
+
+.icon-active {
+  opacity: 1;
 }
 
 .sequence-icon-box {
